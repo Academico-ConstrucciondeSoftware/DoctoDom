@@ -132,6 +132,115 @@ namespace DoctoDom.Rules
             return userResult;
         }
 
+        public int NewUser(User user)
+        {
+            User userResult = new User();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "INSERT INTO [dbo].[Users] ";
+                    query += "([UserName] ";
+                    query += ",[LastName] ";
+                    query += ",[Cedula] ";
+                    query += ",[Phone1] ";
+                    query += ",[Phone2] ";
+                    query += ",[Birthdate] ";
+                    query += ",[UserAddres] ";
+                    query += ",[Email] ";
+                    query += ",[Nickname] ";
+                    query += ",[UserPassword] ";
+                    query += ",[UserType] ";
+                    query += ",[Specialties] ";
+                    query += ",[ImagePath] ";
+                    query += ",[CreatedDate]) ";
+                    query += "VALUES ";
+                    query += "('" + user.UserName + "'";
+                    query += ",'" + user.LastName + "' ";
+                    query += ",'" + user.Cedula + "' ";
+                    query += ",'" + user.Phone1 + "' ";
+                    query += ",'" + user.Phone2 + "' ";
+                    query += ",'" + user.Birthdate + "' ";
+                    query += ",'" + user.UserAddres + "' ";
+                    query += ",'" + user.Email + "' ";
+                    query += ",'" + user.Nickname + "' ";
+                    query += ",'" + user.UserPassword + "' ";
+                    query += ",'" + user.UserType + "' ";
+                    query += ",'" + user.Specialties + "' ";
+                    query += ",'" + @user.ImagePath + "' ";
+                    query += ",'" + DateTime.Now + "') ";
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery(); //Return number affeted insert
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return 0;
+            }
+        }
+
+        public int UpdateUser(User user)
+        {
+            User userResult = new User();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "UPDATE[dbo].[Users] ";
+                    query += "SET[UserName] = '" + user.UserName + "'";
+                    query += ",[LastName] = '" + user.LastName + "'";
+                    query += ",[Cedula] = '" + user.Cedula + "'";
+                    query += ",[Phone1] = '" + user.Phone1 + "'";
+                    query += ",[Phone2] = '" + user.Phone2 + "'";
+                    query += ",[Birthdate] = '" + user.Birthdate + "' ";
+                    query += ",[UserAddres] = '" + user.UserAddres + "'";
+                    query += ",[Email] = '" + user.Email + "'";
+                    query += ",[Nickname] = '" + user.Nickname + "'";
+                    query += ",[UserPassword] = '" + user.UserPassword + "'";
+                    query += ",[UserType] = '" + user.UserType + "'";
+                    query += ",[Specialties] = '" + user.Specialties + "'";
+                    query += ",[ImagePath] = '" + @user.ImagePath + "'";
+                    query += ",[CreatedDate] = '" + user.CreatedDate + "' ";
+                    query += "WHERE Id = '" + user.Id + "'";
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery(); //Return number affeted insert
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return 0;
+            }
+        }
+
+        public int DeleteUser(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "Delete from [dbo].[Users] ";
+                    query += "WHERE Id = '" + user.Id + "'";
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery(); //Return number affeted insert
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return 0;
+            }
+        }
 
     }
 }
