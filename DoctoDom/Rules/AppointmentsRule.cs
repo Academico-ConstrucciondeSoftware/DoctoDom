@@ -143,5 +143,67 @@ namespace DoctoDom.Rules
 
             return quotes;
         }
+
+        public int NewAppointment(Quotes appoinment)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "INSERT INTO [dbo].[Quotes] ";
+                    query += "([QuotesDescription]";
+                    query += ",[QuotesDate]";
+                    query += ",[UserId]";
+                    query += ",[Specialties]";
+                    query += ",[IdDoctor]) ";
+                    query += "VALUES ";
+                    query += "('" + appoinment.QuotesDescription + "'";
+                    query += ",'" + appoinment.QuotesDate + "'";
+                    query += ",'" + appoinment.UserId + "'";
+                    query += ",'" + appoinment.Specialties + "'";
+                    query += ",'" + appoinment.DoctorId + "') ";
+
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery(); //Return number affeted insert
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return 0;
+            }
+        }
+
+        public int EditAppointment(Quotes appoinment)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "UPDATE [dbo].[Quotes] ";
+                    query += "SET [QuotesDescription] = '" + appoinment.QuotesDescription + "' ";
+                    query += ",[QuotesDate] = '" + appoinment.QuotesDate + "' ";
+                    query += ",[UserId] = '" + appoinment.UserId + "' ";
+                    query += ",[Specialties] = '" + appoinment.Specialties + "' ";
+                    query += ",[IdDoctor] = '" + appoinment.DoctorId + "' ";
+                    query += "WHERE Id = '" + appoinment.Id + "' ";
+
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery(); //Return number affeted insert
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return 0;
+            }
+        }
+
     }
 }
