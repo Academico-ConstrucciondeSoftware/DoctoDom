@@ -205,5 +205,70 @@ namespace DoctoDom.Rules
             }
         }
 
+        public DataTable GetAppointments(int Id, string filter)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "select Id,QuotesDescription,QuotesDate,UserId, Specialties from Quotes where UserId = '" + Id.ToString() + "' And ";
+                    query += "Id like '%" + filter + "%' or ";
+                    query += "QuotesDescription like '%" +filter+"%' or ";                               
+                    query += "QuotesDate like '%" + filter + "%' or ";
+                    query += "Specialties like '%" + filter + "%'  ";
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                    sqlDataAdapter.Fill(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                return null;
+            }
+
+            return result;
+        }
+
+
+        public int DeleteAppointments(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "Delete from [dbo].[Quotes] ";
+                    query += "Where Id in (";
+                    DataTable quotes = new DataTable();
+                    quotes = GetAppointments(user.Id);
+
+                    if (quotes.Rows.Count > 0)
+                    {
+                        foreach (DataRow dataRow in quotes.Rows)
+                        {
+                            query += "'" + dataRow["Id"].ToString() + "',";
+                        }
+
+                        query = query.Substring(0, query.LastIndexOf(","));
+                        query += ")";
+                    }
+
+                    SqlCommand sqlCommand = new SqlCommand(query, conn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    conn.Open();
+
+                    return sqlCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+            return 0;
+        }
     }
 }
