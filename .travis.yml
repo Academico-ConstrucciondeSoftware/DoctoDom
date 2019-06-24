@@ -3,5 +3,6 @@ mono: none
 dotnet: 2.1.502
 solution: DoctoDom.sln
 script:
+  - cd DoctoDom
   - dotnet restore
   - dotnet test
