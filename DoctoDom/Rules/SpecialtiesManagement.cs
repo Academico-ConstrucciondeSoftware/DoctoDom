@@ -8,7 +8,7 @@ namespace DoctoDom.Rules
 {
     public class SpecialtiesManagement
     {
-        public bool GetSpecialties()
+        public bool GetSpecialties(int Id)
         {
             return true;
 
