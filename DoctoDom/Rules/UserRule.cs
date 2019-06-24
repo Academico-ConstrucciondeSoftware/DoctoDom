@@ -13,19 +13,19 @@ namespace DoctoDom.Rules
     public class UserRule
     {
         public string ErrorMessage { get; set; }
-        private User user = new User();
+        private User user = new User(1, "", "");
         private string connString = ConfigurationManager.ConnectionStrings["dbContext"].ConnectionString;
 
         public User GetUser(int Id)
         {
-            User userResult = new User();
+            User userResult = new User(1, "", "");
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     string query = "select Id,UserName,LastName,Cedula,Phone1,Phone2, ";
                     query += "Birthdate,UserAddres,Email,Nickname,UserPassword,UserType,Specialties,ImagePath,CreatedDate from Users ";
-                    query += "where Id='"+Id+"'";
+                    query += "where Id='" + Id + "'";
                     SqlCommand sqlCommand = new SqlCommand(query, conn);
                     sqlCommand.CommandType = CommandType.Text;
                     conn.Open();
@@ -76,7 +76,7 @@ namespace DoctoDom.Rules
 
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     sqlDataAdapter.Fill(dataTable);
-                    
+
                 }
             }
             catch (Exception ex)
@@ -90,7 +90,7 @@ namespace DoctoDom.Rules
 
         public User GetUser(string NickName, string password)
         {
-            User userResult = new User();
+            User userResult = new User(1, "", "");
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -134,7 +134,7 @@ namespace DoctoDom.Rules
 
         public int NewUser(User user)
         {
-            User userResult = new User();
+            User userResult = new User(1, "", "");
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -185,7 +185,7 @@ namespace DoctoDom.Rules
 
         public int UpdateUser(User user)
         {
-            User userResult = new User();
+            User userResult = new User(1, "", "");
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))

@@ -75,7 +75,7 @@ namespace DoctoDom.UI
             DisableControl(false);// Disable all control in this form
             btnGuardar.Visible = false;
 
-            User user = new User();
+            User user = new User(1,"","");
             user = userRule.GetUser(User.Id);
             if (!string.IsNullOrEmpty(user.ImagePath))
             {
@@ -85,7 +85,7 @@ namespace DoctoDom.UI
 
         private void LoadUser()
         {
-            User user = new User();
+            User user = new User(1,"","");
             user = userRule.GetUser(User.Id);
             txtCedula.Text = user.Cedula;
             txtNombres.Text = user.UserName;
@@ -102,7 +102,7 @@ namespace DoctoDom.UI
 
         private User GetUser()
         {
-            User user = new User();
+            User user = new User(1,"","");
             user.Id = User.Id;
             user.UserName = txtNombres.Text;
             user.LastName = txtApellidos.Text;

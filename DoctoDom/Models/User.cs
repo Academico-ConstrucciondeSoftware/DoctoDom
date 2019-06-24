@@ -8,8 +8,8 @@ namespace DoctoDom.Models
 {
     public class User
     {
-        public int Id {get;set;}
-	    public string UserName { get; set; }
+        public int Id { get; set; }
+        public string UserName { get; set; }
         public string LastName { get; set; }
         public string Cedula { get; set; }
         public string Phone1 { get; set; }
@@ -23,7 +23,16 @@ namespace DoctoDom.Models
         public int Specialties { get; set; }
         public string ImagePath { get; set; }
         public DateTime CreatedDate { get; set; }
-    }
 
-    
+
+        public User(int Id, string UserName, string Cedula)
+        {
+            Id = this.Id;
+            UserName = this.UserName;
+            Cedula = this.Cedula;
+
+        }
+
+
+    }
 }

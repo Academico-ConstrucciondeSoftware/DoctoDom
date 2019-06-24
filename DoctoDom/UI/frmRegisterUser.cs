@@ -69,7 +69,7 @@ namespace DoctoDom.UI
 
         private User GetUser()
         {
-            User user = new User();            
+            User user = new User(1,"","");            
             user.UserName = txtNombres.Text;
             user.LastName = txtApellidos.Text;
             user.Cedula = txtCedula.Text;
