@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DoctoDom.Rules
 {
-   public class SpecialtiesManagement
+    public class SpecialtiesManagement
     {
         public bool GetSpecialties()
         {
-                return true;
-        }  
+            return true;
+        } }
     }
 }
