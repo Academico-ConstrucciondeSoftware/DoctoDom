@@ -50,3 +50,9 @@ create table Quotes
 	UserId int not null,
 	Specialties int not null
 )
+
+
+SELECT * FROM Quotes;
+SELECT * FROM Users;
+SELECT * FROM Specialties;
+SELECT * FROM DocServices;
