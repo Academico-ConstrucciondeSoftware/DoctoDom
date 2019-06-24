@@ -223,6 +223,8 @@ namespace DoctoDom.Rules
 
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     sqlDataAdapter.Fill(result);
+
+                    conn.Close();
                 }
             }
             catch (Exception ex)
