@@ -74,3 +74,16 @@ C:\Users\milka\Downloads\DoctoDom\obj\Debug\DoctoDom.csproj.GenerateResource.cac
 C:\Users\milka\Downloads\DoctoDom\obj\Debug\DoctoDom.csproj.CoreCompileInputs.cache
 C:\Users\milka\Downloads\DoctoDom\obj\Debug\DoctoDom.exe
 C:\Users\milka\Downloads\DoctoDom\obj\Debug\DoctoDom.pdb
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.csprojAssemblyReference.cache
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.UI.frmCitas.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.frmInitial.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.frmLogin.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.frmParent.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.Properties.Resources.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.UI.frmPerfilDoc.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.UI.frmPerfilPac.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.UI.frmRegisterUser.resources
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.csproj.GenerateResource.cache
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.exe
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.pdb
