@@ -87,3 +87,6 @@ C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.csproj.Gene
 C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.csproj.CoreCompileInputs.cache
 C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.exe
 C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\obj\Debug\DoctoDom.pdb
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\bin\Debug\DoctoDom.exe.config
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\bin\Debug\DoctoDom.exe
+C:\Users\Angel\Documents\GitHub\DoctoDom\DoctoDom\bin\Debug\DoctoDom.pdb

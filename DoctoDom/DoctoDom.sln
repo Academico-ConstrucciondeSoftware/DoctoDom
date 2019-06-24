@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctoDom", "DoctoDom.csproj", "{C876F552-E298-427A-B83A-1EC9AFB01896}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctoDomTests", "..\DoctoDomTests\DoctoDomTests.csproj", "{DFBBF5EB-7D2B-43B3-A5E3-EFDE513D388A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C876F552-E298-427A-B83A-1EC9AFB01896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C876F552-E298-427A-B83A-1EC9AFB01896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C876F552-E298-427A-B83A-1EC9AFB01896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFBBF5EB-7D2B-43B3-A5E3-EFDE513D388A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBBF5EB-7D2B-43B3-A5E3-EFDE513D388A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBBF5EB-7D2B-43B3-A5E3-EFDE513D388A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBBF5EB-7D2B-43B3-A5E3-EFDE513D388A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
