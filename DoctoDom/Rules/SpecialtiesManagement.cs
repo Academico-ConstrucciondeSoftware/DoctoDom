@@ -10,7 +10,7 @@ namespace DoctoDom.Rules
     {
         public bool GetSpecialties()
         {
-                return false;
+                return true;
         }  
     }
 }
