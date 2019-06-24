@@ -96,7 +96,7 @@ namespace DoctoDom.UI
         public void LoadDetailAppointments(int UserId, int CitaId)
         {
             DisableControl(false);
-            Quotes quotes = new Quotes();
+            Quotes quotes = new Quotes("",0,0);
             if (((Helpers.UserType)User.UserType) == Helpers.UserType.Paciente)
                 quotes = appointmentsRule.GetDetailtAppointments(UserId, CitaId);
             else
@@ -180,7 +180,7 @@ namespace DoctoDom.UI
 
         public Quotes GetQuote()
         {
-            Quotes quote = new Quotes();
+            Quotes quote = new Quotes("",0,0);
             quote.Id = Convert.ToInt32(dgvDatos.CurrentRow.Cells[0].Value);
             quote.QuotesDate = dtpFecha.Value;
             quote.QuotesDescription = txtDescripcion.Text;

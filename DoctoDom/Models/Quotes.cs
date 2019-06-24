@@ -14,5 +14,13 @@ namespace DoctoDom.Models
         public int UserId { get; set; }
         public int Specialties { get; set; }
         public int DoctorId { get; set; }
+
+
+        public Quotes(string QuotesDescription, int Specialties, int UserID)
+        {
+            QuotesDescription = this.QuotesDescription;
+            Specialties = this.Specialties;
+            UserID = this.UserId;
+        }
     }
 }
