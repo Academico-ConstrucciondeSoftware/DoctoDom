@@ -14,8 +14,9 @@ namespace DoctoDom.Rules.Tests
         [TestMethod()]
         public void GetSpecialtiesTest()
         {
+            int Id = 1;
             SpecialtiesManagement SM = new SpecialtiesManagement();
-            bool DBResponse = SM.GetSpecialties();
+            bool DBResponse = SM.GetSpecialties(Id);
             Assert.AreEqual(true, DBResponse);
         }
     }

@@ -55,4 +55,3 @@ create table Quotes
 SELECT * FROM Quotes;
 SELECT * FROM Users;
 SELECT * FROM Specialties;
-SELECT * FROM DocServices;

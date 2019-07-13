@@ -68,7 +68,7 @@ namespace DoctoDom.Rules
 
         public Quotes GetDetailtAppointments(int UserId, int CitaId)
         {
-            Quotes quotes = new Quotes();
+            Quotes quotes = new Quotes("",0,0);
             DataTable result = new DataTable();
             try
             {
@@ -107,7 +107,7 @@ namespace DoctoDom.Rules
 
         public Quotes GetDetailtAppointmentsDoctor(int UserId, int CitaId)
         {
-            Quotes quotes = new Quotes();
+            Quotes quotes = new Quotes("",0,0);
             DataTable result = new DataTable();
             try
             {

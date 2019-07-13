@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DoctoDom.Models;
 
 namespace DoctoDom.Rules.Tests
 {
@@ -14,8 +15,9 @@ namespace DoctoDom.Rules.Tests
         [TestMethod()]
         public void GetUserTest()
         {
+            int Id = '2';
             UserManagement UM = new UserManagement();
-            bool DBResponse = UM.GetUser();
+            bool DBResponse = UM.GetUser(Id);
             Assert.AreEqual(true, DBResponse);
         }
 
@@ -30,32 +32,37 @@ namespace DoctoDom.Rules.Tests
         [TestMethod()]
         public void GetUser1Test()
         {
+            string Nickname = "Marcos";
+            string Password = "12345";
             UserManagement UM = new UserManagement();
-            bool DBResponse = UM.GetUser();
+            bool DBResponse = UM.GetUser(Nickname, Password);
             Assert.AreEqual(true, DBResponse);
         }
 
         [TestMethod()]
         public void NewUserTest()
         {
+            User user = new User(2, "marcosrrg9813", "40215414805");
             UserManagement UM = new UserManagement();
-            bool DBResponse = UM.NewUser();
+            bool DBResponse = UM.NewUser(user);
             Assert.AreEqual(true, DBResponse);
         }
 
         [TestMethod()]
         public void UpdateUserTest()
         {
+            User user = new User(2, "marcosrrg9813", "40215414805");
             UserManagement UM = new UserManagement();
-            bool DBResponse = UM.UpdateUser();
+            bool DBResponse = UM.UpdateUser(user);
             Assert.AreEqual(true, DBResponse);
         }
 
         [TestMethod()]
         public void DeleteUserTest()
         {
+            User user = new User(2, "marcosrrg9813", "40215414805");
             UserManagement UM = new UserManagement();
-            bool DBResponse = UM.DeleteUser();
+            bool DBResponse = UM.DeleteUser(user);
             Assert.AreEqual(true, DBResponse);
         }
     }
